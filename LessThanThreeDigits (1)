@@ -1,0 +1,21 @@
+a=0
+ee=10000
+def lovelyRange(a,b):
+        count=0
+        for e in range(a,b+1):
+            count+=lovelyNumber(e)
+        print(count)
+def lovelyNumber(num):
+    q={}
+    string=str(num)
+    for i in range(len(string)):
+        if string[i] in q:
+            q[string[i]]+=1
+        else:
+            q[string[i]]=1
+    for j in list(q.values()):
+        if j>2:
+            return 0
+    return 1
+lovelyRange(a,ee)
+

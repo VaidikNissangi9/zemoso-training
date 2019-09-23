@@ -1,0 +1,28 @@
+a=1
+b=2
+c=3
+d=8
+e=[]
+count=0
+def valid(time):
+    if int(str(time[0])+str(time[1]))< 24 and int(str(time[2])+str(time[3]))<60:
+        return 1 
+    return 0
+e.append(int(str(a)))
+e.append(int(str(b)))
+e.append(int(str(c)))
+e.append(int(str(d)))
+def permute(e):
+  
+  result_perms = [[]]
+  for n in e:
+    new_perms = []
+    for perm in result_perms:
+      for i in range(len(perm)+1):
+        new_perms.append(perm[:i] + [n] + perm[i:])
+        result_perms = new_perms
+  return result_perms
+aa=permute(e)
+for i in aa:
+    count+=valid(i)
+print(count)
